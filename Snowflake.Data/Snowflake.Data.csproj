@@ -28,8 +28,10 @@
     <NoWarn>$(NoWarn);NU1605</NoWarn>
   </PropertyGroup>
 
-  <!-- Shared dependencies for all targets -->
-  <ItemGroup>
+  <!-- ============================================================== -->
+  <!-- DEPENDENCIES FOR NON-NET471 TARGETS (use NuGet packages)       -->
+  <!-- ============================================================== -->
+  <ItemGroup Condition="'$(TargetFramework)' != 'net471'">
     <PackageReference Include="Apache.Arrow" Version="14.0.2" />
     <PackageReference Include="AWSSDK.S3" Version="4.0.4" />
     <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
@@ -40,40 +42,129 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.34.0" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
     <PackageReference Include="Tomlyn.Signed" Version="0.17.0" />
-  </ItemGroup>
-
-  <!-- Microsoft.Extensions.Logging: Use 6.0.1 for net471 to match target app's Abstractions 6.0.0.1 -->
-  <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.1" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' != 'net471'">
     <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.5" />
   </ItemGroup>
 
-  <!-- Pin transitive dependencies for net471 to match target application's assembly versions -->
+  <!-- ============================================================== -->
+  <!-- DEPENDENCIES FOR NET471 - Use local libs folder + minimal NuGet -->
+  <!-- ============================================================== -->
+
+  <!-- NuGet packages that are NOT in your libs folder -->
   <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
-    <!-- System.Text.Json 8.0.0.5 -->
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-    <!-- System.Collections.Immutable 7.0.0.0 -->
-    <PackageReference Include="System.Collections.Immutable" Version="7.0.0" />
-    <!-- System.Memory 4.0.1.2 -->
-    <PackageReference Include="System.Memory" Version="4.5.5" />
-    <!-- System.Buffers 4.0.3.0 -->
-    <PackageReference Include="System.Buffers" Version="4.5.1" />
-    <!-- System.Threading.Tasks.Extensions 4.2.0.1 -->
-    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
-    <!-- System.Runtime.CompilerServices.Unsafe 6.0.0.0 -->
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
-    <!-- Microsoft.Bcl.AsyncInterfaces 7.0.0.0 -->
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" />
-    <!-- System.Text.Encodings.Web 7.0.0.0 -->
-    <PackageReference Include="System.Text.Encodings.Web" Version="7.0.0" />
-    <!-- Google.Protobuf 3.28.2.0 -->
-    <PackageReference Include="Google.Protobuf" Version="3.28.2" />
+    <PackageReference Include="Apache.Arrow" Version="14.0.2" />
+    <PackageReference Include="AWSSDK.S3" Version="4.0.4" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
+    <PackageReference Include="Azure.Storage.Common" Version="12.12.0" />
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+    <PackageReference Include="Tomlyn.Signed" Version="0.17.0" />
+  </ItemGroup>
+
+  <!-- Direct references to your existing DLLs from libs folder -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
+    <Reference Include="Azure.Core">
+      <HintPath>libs\Azure.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography">
+      <HintPath>libs\BouncyCastle.Cryptography.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Google.Api.CommonProtos">
+      <HintPath>libs\Google.Api.CommonProtos.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Google.Api.Gax">
+      <HintPath>libs\Google.Api.Gax.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Google.Api.Gax.Grpc">
+      <HintPath>libs\Google.Api.Gax.Grpc.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>libs\Google.Apis.Auth.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>libs\Google.Apis.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>libs\Google.Protobuf.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+      <HintPath>libs\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>libs\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>libs\Microsoft.Extensions.Logging.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>libs\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>libs\Microsoft.Extensions.Options.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>libs\Microsoft.Extensions.Primitives.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging">
+      <HintPath>libs\Microsoft.IdentityModel.Logging.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>libs\Microsoft.IdentityModel.Tokens.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>libs\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>libs\System.Buffers.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>libs\System.Collections.Immutable.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>libs\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>libs\System.Memory.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>libs\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>libs\System.Text.Encodings.Web.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>libs\System.Text.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>libs\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
 
   <!-- Mono.Unix dependency ONLY for Unix/Linux platforms (netstandard2.0 and net8.0) -->
-  <!-- NOT included for Windows targets: net481, net8.0-windows -->
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'net8.0'">
     <PackageReference Include="Mono.Unix" Version="7.1.0-final.1.21458.1" />
   </ItemGroup>
@@ -90,7 +181,6 @@
 
   <ItemGroup Condition="'$(Configuration)' != 'Release'">
     <InternalsVisibleTo Include="Snowflake.Data.Tests" />
-    <!--needed by Moq to be able to mock internal interfaces-->
     <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
   </ItemGroup>
 
@@ -123,17 +213,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Include MiniCore native libraries in NuGet package and copy to output -->
     <Content Include="runtimes\**\*.dll" Pack="true" PackagePath="runtimes\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="runtimes\**\*.so" Pack="true" PackagePath="runtimes\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="runtimes\**\*.dylib" Pack="true" PackagePath="runtimes\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
-
-    <!-- Include .targets for .NET Framework compatibility -->
     <None Include="build\Snowflake.Data.targets" Pack="true" PackagePath="build" />
     <None Include="build\Snowflake.Data.targets" Pack="true" PackagePath="buildTransitive" />
   </ItemGroup>
 
-  <!-- Windows: also copy DLL to output root (runtime doesn't find it in runtimes/ subfolder for .NET framework) -->
   <Target Name="CopyMiniCoreToOutput" AfterTargets="Build" Condition="$([MSBuild]::IsOSPlatform('Windows'))">
     <PropertyGroup>
         <SfLocalArch Condition="'$(RuntimeIdentifier)' == 'win-x64' Or '$(PlatformTarget)' == 'x64'">x64</SfLocalArch>
