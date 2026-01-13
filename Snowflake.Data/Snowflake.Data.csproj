@@ -53,17 +53,40 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
     <PackageReference Include="Apache.Arrow" Version="14.0.2" />
     <PackageReference Include="AWSSDK.S3" Version="4.0.4" />
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
-    <PackageReference Include="Azure.Storage.Common" Version="12.12.0" />
-    <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
     <PackageReference Include="Tomlyn.Signed" Version="0.17.0" />
   </ItemGroup>
 
   <!-- Direct references to your existing DLLs from libs folder -->
   <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
+    <!-- Microsoft.CSharp needed for dynamic keyword support -->
+    <Reference Include="Microsoft.CSharp" />
+
+    <!-- Azure assemblies - must match your application's versions -->
     <Reference Include="Azure.Core">
       <HintPath>libs\Azure.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Azure.Storage.Blobs">
+      <HintPath>libs\Azure.Storage.Blobs.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Azure.Storage.Common">
+      <HintPath>libs\Azure.Storage.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- Google Cloud assemblies - must match your application's versions -->
+    <Reference Include="Google.Cloud.Storage.V1">
+      <HintPath>libs\Google.Cloud.Storage.V1.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>libs\Google.Apis.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Google.Apis.Storage.v1">
+      <HintPath>libs\Google.Apis.Storage.v1.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="BouncyCastle.Cryptography">
