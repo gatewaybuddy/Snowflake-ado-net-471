@@ -23,6 +23,11 @@
     <DefineConstants>$(DefineConstants);WINDOWS_BUILD</DefineConstants>
   </PropertyGroup>
 
+  <!-- Suppress NuGet package downgrade warnings for net471 - binding redirects handle version mismatches at runtime -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net471'">
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
+  </PropertyGroup>
+
   <!-- Shared dependencies for all targets -->
   <ItemGroup>
     <PackageReference Include="Apache.Arrow" Version="14.0.2" />
