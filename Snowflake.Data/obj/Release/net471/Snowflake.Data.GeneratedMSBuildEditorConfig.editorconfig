@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Snowflake.Data
+build_property.ProjectDir = C:\Temp\snowflake\sf-ado-net\Snowflake.Data\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

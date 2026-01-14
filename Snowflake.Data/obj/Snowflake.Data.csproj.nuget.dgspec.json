@@ -1,0 +1,520 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Temp\\snowflake\\sf-ado-net\\Snowflake.Data\\Snowflake.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\Temp\\snowflake\\sf-ado-net\\Snowflake.Data\\Snowflake.Data.csproj": {
+      "version": "5.3.0",
+      "restore": {
+        "projectUniqueName": "C:\\Temp\\snowflake\\sf-ado-net\\Snowflake.Data\\Snowflake.Data.csproj",
+        "projectName": "Snowflake.Data",
+        "projectPath": "C:\\Temp\\snowflake\\sf-ado-net\\Snowflake.Data\\Snowflake.Data.csproj",
+        "packagesPath": "C:\\Users\\wmabery\\.nuget\\packages\\",
+        "outputPath": "C:\\Temp\\snowflake\\sf-ado-net\\Snowflake.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\wmabery\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net471",
+          "net481",
+          "net8.0",
+          "net8.0-windows",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          },
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          },
+          "net471": {
+            "targetAlias": "net471",
+            "projectReferences": {}
+          },
+          "net481": {
+            "targetAlias": "net481",
+            "projectReferences": {}
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1603",
+            "NU1605",
+            "NU1701",
+            "NU1702"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1603",
+            "NU1605",
+            "NU1701",
+            "NU1702"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
+            "Apache.Arrow": {
+              "target": "Package",
+              "version": "[14.0.2, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.13.0, )"
+            },
+            "Azure.Storage.Common": {
+              "target": "Package",
+              "version": "[12.12.0, )"
+            },
+            "BouncyCastle.Cryptography": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Google.Cloud.Storage.V1": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Mono.Unix": {
+              "target": "Package",
+              "version": "[7.1.0-final.1.21458.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.34.0, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "Tomlyn.Signed": {
+              "target": "Package",
+              "version": "[0.17.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        },
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
+            "Apache.Arrow": {
+              "target": "Package",
+              "version": "[14.0.2, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.13.0, )"
+            },
+            "Azure.Storage.Common": {
+              "target": "Package",
+              "version": "[12.12.0, )"
+            },
+            "BouncyCastle.Cryptography": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Google.Cloud.Storage.V1": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.34.0, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "Tomlyn.Signed": {
+              "target": "Package",
+              "version": "[0.17.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        },
+        "net471": {
+          "targetAlias": "net471",
+          "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
+            "Apache.Arrow": {
+              "target": "Package",
+              "version": "[14.0.2, )"
+            },
+            "Azure.Core": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.25.0, )"
+            },
+            "Azure.Storage.Blobs": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[12.13.0, )"
+            },
+            "Azure.Storage.Common": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[12.12.0, )"
+            },
+            "BouncyCastle.Cryptography": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Google.Api.Gax": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "Google.Api.Gax.Grpc": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "Google.Api.Gax.Rest": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.8.0, )"
+            },
+            "Google.Apis": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.67.0, )"
+            },
+            "Google.Apis.Auth": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.67.0, )"
+            },
+            "Google.Apis.Core": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.67.0, )"
+            },
+            "Google.Apis.Storage.v1": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.67.0.3365, )"
+            },
+            "Google.Cloud.Storage.V1": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "Google.Protobuf": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.28.2, )"
+            },
+            "Microsoft.Bcl.AsyncInterfaces": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Buffers": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.5.1, )"
+            },
+            "System.Collections.Immutable": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.34.0, )"
+            },
+            "System.Memory": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.5.5, )"
+            },
+            "System.Runtime.CompilerServices.Unsafe": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Text.Encodings.Web": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "System.Text.Json": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "System.Threading.Tasks.Extensions": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.5.4, )"
+            },
+            "Tomlyn.Signed": {
+              "target": "Package",
+              "version": "[0.17.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416\\RuntimeIdentifierGraph.json"
+        },
+        "net481": {
+          "targetAlias": "net481",
+          "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
+            "Apache.Arrow": {
+              "target": "Package",
+              "version": "[14.0.2, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.13.0, )"
+            },
+            "Azure.Storage.Common": {
+              "target": "Package",
+              "version": "[12.12.0, )"
+            },
+            "BouncyCastle.Cryptography": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Google.Cloud.Storage.V1": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.34.0, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "Tomlyn.Signed": {
+              "target": "Package",
+              "version": "[0.17.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
+            "Apache.Arrow": {
+              "target": "Package",
+              "version": "[14.0.2, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.13.0, )"
+            },
+            "Azure.Storage.Common": {
+              "target": "Package",
+              "version": "[12.12.0, )"
+            },
+            "BouncyCastle.Cryptography": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Google.Cloud.Storage.V1": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Mono.Unix": {
+              "target": "Package",
+              "version": "[7.1.0-final.1.21458.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.34.0, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "Tomlyn.Signed": {
+              "target": "Package",
+              "version": "[0.17.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

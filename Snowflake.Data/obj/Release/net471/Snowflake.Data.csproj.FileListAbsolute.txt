@@ -1,0 +1,10 @@
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.csproj.AssemblyReference.cache
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.csproj.SuggestedBindingRedirects.cache
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.dll.config
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.Core.ErrorMessages.resources
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.csproj.GenerateResource.cache
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.AssemblyInfoInputs.cache
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.AssemblyInfo.cs
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.csproj.CoreCompileInputs.cache
+C:\Temp\snowflake\sf-ado-net\Snowflake.Data\obj\Release\net471\Snowflake.Data.sourcelink.json
