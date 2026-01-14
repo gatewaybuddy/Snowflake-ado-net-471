@@ -55,12 +55,42 @@
     <PackageReference Include="AWSSDK.S3" Version="4.0.4" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
     <PackageReference Include="Tomlyn.Signed" Version="0.17.0" />
+
+    <!-- Exclude transitive dependencies - we use libs folder versions instead -->
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Azure.Storage.Common" Version="12.12.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Azure.Core" Version="1.25.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Google.Api.Gax" Version="4.8.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Google.Api.Gax.Rest" Version="4.8.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Google.Api.Gax.Grpc" Version="4.8.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Google.Apis" Version="1.67.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.67.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Google.Apis.Core" Version="1.67.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Google.Apis.Storage.v1" Version="1.67.0.3365" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.1" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.34.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Google.Protobuf" Version="3.28.2" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="7.0.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="System.Memory" Version="4.5.5" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="System.Buffers" Version="4.5.1" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="System.Collections.Immutable" Version="7.0.0" ExcludeAssets="all" PrivateAssets="all" />
   </ItemGroup>
 
   <!-- Direct references to your existing DLLs from libs folder -->
   <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
-    <!-- Microsoft.CSharp needed for dynamic keyword support -->
-    <Reference Include="Microsoft.CSharp" />
+    <!-- Framework assemblies - Microsoft.CSharp is in GAC for .NET Framework -->
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>libs\Microsoft.CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
 
     <!-- Azure assemblies - must match your application's versions -->
     <Reference Include="Azure.Core">
@@ -103,6 +133,10 @@
     </Reference>
     <Reference Include="Google.Api.Gax.Grpc">
       <HintPath>libs\Google.Api.Gax.Grpc.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Google.Api.Gax.Rest">
+      <HintPath>libs\Google.Api.Gax.Rest.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Google.Apis.Auth">
