@@ -7,6 +7,14 @@ Copy the following DLLs from your application's bin directory to this `libs` fol
 ### Framework Assembly (from GAC)
 - `Microsoft.CSharp.dll` - Copy from `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.CSharp.dll`
 
+### AWS SDK Assemblies (download from NuGet)
+These are NOT in your existing app - download from NuGet:
+1. Download `AWSSDK.S3` 4.0.4 from https://www.nuget.org/packages/AWSSDK.S3/4.0.4
+2. Download `AWSSDK.Core` 4.0.0.14 from https://www.nuget.org/packages/AWSSDK.Core/4.0.0.14
+3. Extract the .nupkg files (rename to .zip), find the DLLs under `lib\netstandard2.0\`:
+   - `AWSSDK.S3.dll`
+   - `AWSSDK.Core.dll`
+
 ### Azure Assemblies
 - `Azure.Core.dll` (version 1.19.0.0)
 - `Azure.Storage.Blobs.dll`

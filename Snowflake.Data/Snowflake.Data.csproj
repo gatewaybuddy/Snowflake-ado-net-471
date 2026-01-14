@@ -16,16 +16,16 @@
     <Version>5.3.0</Version>
     <DebugType>Full</DebugType>
     <LangVersion>8</LangVersion>
+    <!-- Suppress NuGet package downgrade warnings - we use libs folder with specific versions -->
+    <!-- This must be in main PropertyGroup to apply during restore before TargetFramework is known -->
+    <NoWarn>$(NoWarn);NU1605;NU1701;NU1702;NU1603</NoWarn>
+    <MSBuildWarningsAsErrors></MSBuildWarningsAsErrors>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);NU1605;NU1701;NU1702;NU1603</WarningsNotAsErrors>
   </PropertyGroup>
 
   <!-- Define WINDOWS_BUILD for all Windows-specific targets -->
   <PropertyGroup Condition="'$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net481' OR '$(TargetFramework)' == 'net8.0-windows'">
     <DefineConstants>$(DefineConstants);WINDOWS_BUILD</DefineConstants>
-  </PropertyGroup>
-
-  <!-- Suppress NuGet package downgrade warnings for net471 - binding redirects handle version mismatches at runtime -->
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net471'">
-    <NoWarn>$(NoWarn);NU1605</NoWarn>
   </PropertyGroup>
 
   <!-- ============================================================== -->
@@ -52,9 +52,12 @@
   <!-- NuGet packages that are NOT in your libs folder -->
   <ItemGroup Condition="'$(TargetFramework)' == 'net471'">
     <PackageReference Include="Apache.Arrow" Version="14.0.2" />
-    <PackageReference Include="AWSSDK.S3" Version="4.0.4" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
     <PackageReference Include="Tomlyn.Signed" Version="0.17.0" />
+
+    <!-- AWSSDK packages - use ExcludeAssets to prevent transitive Microsoft.Bcl.AsyncInterfaces conflict -->
+    <PackageReference Include="AWSSDK.S3" Version="4.0.4" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="AWSSDK.Core" Version="4.0.0.14" ExcludeAssets="all" PrivateAssets="all" />
 
     <!-- Exclude transitive dependencies - we use libs folder versions instead -->
     <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" ExcludeAssets="all" PrivateAssets="all" />
@@ -89,6 +92,16 @@
     <!-- Framework assemblies - Microsoft.CSharp is in GAC for .NET Framework -->
     <Reference Include="Microsoft.CSharp">
       <HintPath>libs\Microsoft.CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <!-- AWS SDK assemblies - download from NuGet and copy to libs -->
+    <Reference Include="AWSSDK.S3">
+      <HintPath>libs\AWSSDK.S3.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>libs\AWSSDK.Core.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
