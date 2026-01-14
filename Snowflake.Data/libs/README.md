@@ -2,25 +2,17 @@
 
 Copy the following DLLs from your application's bin directory to this `libs` folder before building.
 
-## Required DLLs (copy from your application's bin directory)
+## Required DLLs
 
 ### Framework Assembly (from GAC)
 - `Microsoft.CSharp.dll` - Copy from `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.CSharp.dll`
 
-### AWS SDK Assemblies (download from NuGet)
-These are NOT in your existing app - download from NuGet:
-1. Download `AWSSDK.S3` 4.0.4 from https://www.nuget.org/packages/AWSSDK.S3/4.0.4
-2. Download `AWSSDK.Core` 4.0.0.14 from https://www.nuget.org/packages/AWSSDK.Core/4.0.0.14
-3. Extract the .nupkg files (rename to .zip), find the DLLs under `lib\netstandard2.0\`:
-   - `AWSSDK.S3.dll`
-   - `AWSSDK.Core.dll`
-
-### Azure Assemblies
-- `Azure.Core.dll` (version 1.19.0.0)
+### Azure Assemblies (from your bin folder)
+- `Azure.Core.dll`
 - `Azure.Storage.Blobs.dll`
 - `Azure.Storage.Common.dll`
 
-### Google Cloud Assemblies
+### Google Cloud Assemblies (from your bin folder)
 - `Google.Cloud.Storage.V1.dll`
 - `Google.Apis.dll`
 - `Google.Apis.Storage.v1.dll`
@@ -30,33 +22,33 @@ These are NOT in your existing app - download from NuGet:
 - `Google.Api.Gax.dll`
 - `Google.Api.Gax.Grpc.dll`
 - `Google.Api.Gax.Rest.dll`
-- `Google.Protobuf.dll` (version 3.28.2.0)
+- `Google.Protobuf.dll`
 
-### Security/Crypto Assemblies
+### Security/Crypto Assemblies (from your bin folder)
 - `BouncyCastle.Cryptography.dll`
 - `Microsoft.IdentityModel.Logging.dll`
 - `Microsoft.IdentityModel.Tokens.dll`
 - `System.IdentityModel.Tokens.Jwt.dll`
 
-### Microsoft Extensions Assemblies
-- `Microsoft.Bcl.AsyncInterfaces.dll` (version 7.0.0.0)
+### Microsoft Extensions Assemblies (from your bin folder)
+- `Microsoft.Bcl.AsyncInterfaces.dll`
 - `Microsoft.Extensions.DependencyInjection.Abstractions.dll`
 - `Microsoft.Extensions.Logging.dll`
-- `Microsoft.Extensions.Logging.Abstractions.dll` (version 6.0.0.1)
+- `Microsoft.Extensions.Logging.Abstractions.dll`
 - `Microsoft.Extensions.Options.dll`
 - `Microsoft.Extensions.Primitives.dll`
 
-### JSON/Serialization Assemblies
-- `Newtonsoft.Json.dll` (version 13.0.0.0)
-- `System.Text.Json.dll` (version 8.0.0.5)
-- `System.Text.Encodings.Web.dll` (version 7.0.0.0)
+### JSON/Serialization Assemblies (from your bin folder)
+- `Newtonsoft.Json.dll`
+- `System.Text.Json.dll`
+- `System.Text.Encodings.Web.dll`
 
-### System Assemblies
-- `System.Buffers.dll` (version 4.0.3.0)
-- `System.Collections.Immutable.dll` (version 7.0.0.0)
-- `System.Memory.dll` (version 4.0.1.2)
-- `System.Runtime.CompilerServices.Unsafe.dll` (version 6.0.0.0)
-- `System.Threading.Tasks.Extensions.dll` (version 4.2.0.1)
+### System Assemblies (from your bin folder)
+- `System.Buffers.dll`
+- `System.Collections.Immutable.dll`
+- `System.Memory.dll`
+- `System.Runtime.CompilerServices.Unsafe.dll`
+- `System.Threading.Tasks.Extensions.dll`
 
 ## Build Instructions
 
@@ -76,3 +68,9 @@ The compiled `Snowflake.Data.dll` will be in:
 `Snowflake.Data/bin/Release/net471/Snowflake.Data.dll`
 
 Copy this single DLL to your application's bin directory.
+
+## Notes
+
+- AWSSDK packages (AWSSDK.S3, AWSSDK.Core) come from NuGet - you don't need to copy these
+- Apache.Arrow comes from NuGet - you don't need to copy this
+- All other assemblies must be in your libs folder to match your application's exact versions

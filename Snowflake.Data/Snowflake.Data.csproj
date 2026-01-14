@@ -55,9 +55,8 @@
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
     <PackageReference Include="Tomlyn.Signed" Version="0.17.0" />
 
-    <!-- AWSSDK packages - use ExcludeAssets to prevent transitive Microsoft.Bcl.AsyncInterfaces conflict -->
-    <PackageReference Include="AWSSDK.S3" Version="4.0.4" ExcludeAssets="all" PrivateAssets="all" />
-    <PackageReference Include="AWSSDK.Core" Version="4.0.0.14" ExcludeAssets="all" PrivateAssets="all" />
+    <!-- AWSSDK packages - let NuGet provide these (user doesn't have them) -->
+    <PackageReference Include="AWSSDK.S3" Version="4.0.4" />
 
     <!-- Exclude transitive dependencies - we use libs folder versions instead -->
     <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" ExcludeAssets="all" PrivateAssets="all" />
@@ -92,16 +91,6 @@
     <!-- Framework assemblies - Microsoft.CSharp is in GAC for .NET Framework -->
     <Reference Include="Microsoft.CSharp">
       <HintPath>libs\Microsoft.CSharp.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-
-    <!-- AWS SDK assemblies - download from NuGet and copy to libs -->
-    <Reference Include="AWSSDK.S3">
-      <HintPath>libs\AWSSDK.S3.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="AWSSDK.Core">
-      <HintPath>libs\AWSSDK.Core.dll</HintPath>
       <Private>false</Private>
     </Reference>
 
