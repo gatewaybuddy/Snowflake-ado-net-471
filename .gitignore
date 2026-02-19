@@ -1,0 +1,10 @@
+**/obj/
+*.user
+*.suo
+.vs/
+
+# Ignore bin except for net471 Release output
+**/bin/*
+!**/bin/Release/
+**/bin/Release/*
+!**/bin/Release/net471/

@@ -59,9 +59,9 @@
     <PackageReference Include="AWSSDK.S3" Version="4.0.4" />
 
     <!-- Exclude transitive dependencies - we use libs folder versions instead -->
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" ExcludeAssets="all" PrivateAssets="all" />
-    <PackageReference Include="Azure.Storage.Common" Version="12.12.0" ExcludeAssets="all" PrivateAssets="all" />
-    <PackageReference Include="Azure.Core" Version="1.25.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Azure.Storage.Common" Version="12.9.0" ExcludeAssets="all" PrivateAssets="all" />
+    <PackageReference Include="Azure.Core" Version="1.19.0" ExcludeAssets="all" PrivateAssets="all" />
     <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" ExcludeAssets="all" PrivateAssets="all" />
     <PackageReference Include="Google.Api.Gax" Version="4.8.0" ExcludeAssets="all" PrivateAssets="all" />
     <PackageReference Include="Google.Api.Gax.Rest" Version="4.8.0" ExcludeAssets="all" PrivateAssets="all" />
@@ -207,6 +207,10 @@
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>libs\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Memory.Data">
+      <HintPath>libs\System.Memory.Data.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="System.Text.Encodings.Web">
